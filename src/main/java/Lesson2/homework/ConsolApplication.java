@@ -51,7 +51,7 @@ public class ConsolApplication {
         long timeConsumedMillis4 = finish4 - start4;
         System.out.println("\n"+timeConsumedMillis4);
 
-        
+
 
         System.out.println("Mistakes "+checker(arrBubble,arrShake));
 
