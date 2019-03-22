@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ConsolApplication {
 
     public static void main(String[] args) {
-        int[] arr = initializeArray(100000);
+        int[] arr = initializeArray(10);
         SortAlgorithms sa=new SortAlgorithms();
         //System.out.println(Arrays.toString(arr));
 
@@ -14,7 +14,7 @@ public class ConsolApplication {
         //Bubble Sort
         long start = System.currentTimeMillis();
 
-        int[] arrBubble= sa.BubbleSorting(arr);
+        int[] arrBubble= sa.bubbleSorting(arr);
 
         long finish = System.currentTimeMillis();
         long timeConsumedMillis = finish - start;
@@ -24,7 +24,7 @@ public class ConsolApplication {
         //Shake Sort
         long start2 = System.currentTimeMillis();
 
-        int[] arrShake= sa.ShakeSorting(arr);
+        int[] arrShake= sa.shakeSorting(arr);
 
         long finish2 = System.currentTimeMillis();
         long timeConsumedMillis2 = finish2 - start2;
@@ -34,11 +34,12 @@ public class ConsolApplication {
         //Hairbrush Sort
         long start3 = System.currentTimeMillis();
 
-        int[] arrHairbrush= sa.ShakeSorting(arr);
+        int[] arrHairbrush= sa.hairbrushSorting(arr);
 
         long finish3 = System.currentTimeMillis();
         long timeConsumedMillis3 = finish3 - start3;
         System.out.println("\n"+timeConsumedMillis3);
+        System.out.println(Arrays.toString(arrHairbrush));
 
 
         //Choice Sort
@@ -50,7 +51,9 @@ public class ConsolApplication {
         long timeConsumedMillis4 = finish4 - start4;
         System.out.println("\n"+timeConsumedMillis4);
 
-        System.out.println("Mistakes "+checker(arrBubble,arrHairbrush));
+        
+
+        System.out.println("Mistakes "+checker(arrBubble,arrShake));
 
 
     }

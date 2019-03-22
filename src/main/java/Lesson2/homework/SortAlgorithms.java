@@ -30,7 +30,7 @@ public class SortAlgorithms {
         return arr;
     }
 
-    public int[] BubbleSorting(int[] arrs){
+    public int[] bubbleSorting(int[] arrs){
         int [] arr =new int[arrs.length];
         System.arraycopy(arrs,0,arr,0,arr.length);
 
@@ -50,7 +50,7 @@ public class SortAlgorithms {
         return arr;
     }
 
-    public int[] HairbrushSorting(int[] arrs){
+    public int[] hairbrushSorting(int[] arrs){
         int [] arr =new int[arrs.length];
         System.arraycopy(arrs,0,arr,0,arr.length);
         int leng = (int)(arr.length/1.24);
@@ -61,8 +61,8 @@ public class SortAlgorithms {
         while(isSorted){
             for (int i = 0; i <(arr.length-leng) ; i++) {
                 if(arr[i]>arr[i+leng]){
-                    tmp=arr[i+1];
-                    arr[i+1]=arr[i];
+                    tmp=arr[i+leng];
+                    arr[i+leng]=arr[i];
                     arr[i]=tmp;
                     isanyChange++;
                 }
@@ -72,13 +72,16 @@ public class SortAlgorithms {
                     isSorted = false;
                 }
                 leng=(int)(leng/1.24);
+                if(leng<1){
+                    leng=1;
+                }
             }
             isanyChange=0;
         }
         return arr;
     }
 
-    public int[] ShakeSorting(int[] arrs){
+    public int[] shakeSorting(int[] arrs){
         int [] arr =new int[arrs.length];
         System.arraycopy(arrs,0,arr,0,arr.length);
         int step=arr.length;
@@ -105,4 +108,9 @@ public class SortAlgorithms {
         }
         return arr;
     }
+
+
+
+
+
 }
